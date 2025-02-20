@@ -12,23 +12,23 @@ const Projects = () => {
 const styles = {
   container: {
     width: "100vw",
-    height: "100vh", // Full viewport height
+    height: "100vh", 
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f4f4f4", // Light gray background
+    backgroundColor: "#f4f4f4", 
     textAlign: "center",
   },
   heading: {
     fontSize: "3rem",
     fontWeight: "bold",
-    color: "#222", // Dark text
+    color: "#222", 
     marginBottom: "10px",
   },
   text: {
     fontSize: "1.5rem",
-    color: "#555", // Medium gray text
+    color: "#555",
     maxWidth: "600px",
   },
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa"; // Import icons
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -30,7 +30,7 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#111", // Slightly darker background
+    backgroundColor: "#111",
     color: "white",
     position: "relative",
     bottom: "0",
@@ -41,7 +41,7 @@ const styles = {
     marginBottom: "5px",
   },
   icon: {
-    fontSize: "2rem", // Adjust size of the icons
+    fontSize: "2rem",
     color: "white",
     transition: "0.3s",
   },

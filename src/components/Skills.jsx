@@ -1,18 +1,50 @@
-import React from "react";
+import { alignProperty } from "@mui/material/styles/cssUtils";
+import FadeIn from "./FadeIn";
+
+
 
 const Skills = () => {
   return (
-    <section>
-      <h2>Skills</h2>
-      <ul style={{ listStyleType: "disc", paddingLeft: "20px", textAlign: "left" }}>
-        <li>React.js</li>
-        <li>JavaScript (ES6+)</li>
-        <li>Three.js</li>
-        <li>Python & Machine Learning</li>
-        <li>Vite</li>
-      </ul>
+    <section id="home" style={styles.container}>
+
+
+    <FadeIn>
+      <div style={styles.overlay}>
+        <h1>Skills</h1>
+      </div>
+      </FadeIn>
+
+
+      <FadeIn> <p> hello I am trying fade </p> </FadeIn>
+      
     </section>
   );
+};
+
+
+
+const styles = {
+  container: {
+    width: "100vw",
+    height: "50vh",
+    textAlign: 'center', // <-- the magic
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    
+    
+
+  },
+  overlay: {
+    width: "30vw",
+    height: "20vh",
+    backgroundColor: "rgba(34, 19, 35, 0.5)", 
+    backdropFilter: "blur(10px)", 
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  
 };
 
 export default Skills;

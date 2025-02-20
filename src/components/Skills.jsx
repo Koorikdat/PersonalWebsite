@@ -31,10 +31,10 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    
-    
-
+    flexDirection: 'row',
+    marginright: "auto",
   },
+
   overlay: {
     width: "30vw",
     height: "20vh",
@@ -43,6 +43,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginright: "auto",
   },
   
 };

@@ -25,7 +25,7 @@ const Footer = () => {
 const styles = {
   footer: {
     width: "100vw",
-    height: "20vh",
+    height: "50vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

@@ -12,20 +12,24 @@ const FadeIn = ({ children }) => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 } // Adjust this to control when it triggers
+      { threshold: 0.3 }
     );
 
     if (ref.current) observer.observe(ref.current);
-
     return () => observer.disconnect();
   }, []);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -1 }}
+      initial={{ opacity: 1, x: 20 }}
+      transition={{ duration: .5, ease: "easeOut" }}
+      whileHover={{ 
+        opacity: 1,
+        scale: 1.05, 
+        boxShadow: "0px 4px 15px rgba(255, 255, 255, 0.2)" 
+      }}
     >
       {children}
     </motion.div>

@@ -9,9 +9,9 @@ const modelPaths = [
   "/PersonalWebsite/models/model4.glb",
 ];
 
-const modelScales = [0.45, 2.7, .04, 4]; 
+const modelScales = [0.35, 2.7, .04, 4]; 
 const modelPositions = [
-  [0, 0, 1],    
+  [-1, 0, 1],    
   [0, -1, 1], 
   [0.5, -1, 1],
   [0, -.75, 1],  

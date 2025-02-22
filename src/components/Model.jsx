@@ -13,7 +13,7 @@ const modelScales = [0.35, 2.7, .04, 4];
 const modelPositions = [
   [-1, 0, 1],    
   [0, -1, 1], 
-  [0.5, -1, 1],
+  [-1, -1, 1],
   [0, -.75, 1],  
 ];
 
@@ -48,8 +48,8 @@ const Model = ({ modelIndex }) => {
     <primitive
       ref={modelRef}
       object={scene}
-      scale={modelScales[modelIndex]} // Apply scale dynamically
-      position={modelPositions[modelIndex]} // Apply position dynamically
+      scale={modelScales[modelIndex]} 
+      position={modelPositions[modelIndex]} 
     />
   );
 };
@@ -60,8 +60,8 @@ const ThreeScene = () => {
   const handleClick = () => {
     setModelIndex((prevIndex) => {
       if (prevIndex >= modelPaths.length - 1) {
-        setRotation(0); // Reset rotation
-        return 0; // Reset index to 0 (first model)
+        setRotation(0); 
+        return 0; 
       }
       return prevIndex + 1;
     });

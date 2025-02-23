@@ -7,7 +7,7 @@ const Skills = () => {
   return (
     <section id="home" style={styles.container}>
 
-      <FadeIn>
+      {/* <FadeIn>
         <div style={styles.overlay1}>
           <h1>Skills</h1>
             <p1> ReactJS </p1>
@@ -17,7 +17,7 @@ const Skills = () => {
             <p1> C </p1>
             <p1> NodeJS </p1>
         </div>
-      </FadeIn>
+      </FadeIn> */}
 
 
       <FadeIn>
@@ -81,21 +81,21 @@ const styles = {
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
     flexDirection: "column",
     
-},
+    },
 
-overlay2: {
-  width: "75vw", 
-  height: "70vh",
-  backgroundColor: "rgba(34, 19, 35, 0.5)",
-  backdropFilter: "blur(10px)",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  padding: "20px",
-  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-  flexDirection: "column",
-  
-},
+  overlay2: {
+    width: "75vw", 
+    height: "70vh",
+    backgroundColor: "rgba(34, 19, 35, 0.5)",
+    backdropFilter: "blur(10px)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "20px",
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    flexDirection: "column",
+    
+  },
 
   title: {
     fontSize: "2.5rem",
@@ -103,19 +103,21 @@ overlay2: {
     textAlign: "center",
     marginBottom: "30px",
   },
-  
+
   skillsGrid: {
+    height: "300px",
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
     gap: "30px",
     justifyContent: "center",
     maxWidth: "900px",
   },
   skillCard: {
-    width: "120px",
-    height: "120px",
+    
+    width: "150px",
+    height: "150px",
     backgroundColor: "#222",
-    borderRadius: "10px",
+    borderRadius: "20px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -123,10 +125,17 @@ overlay2: {
     boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.1)",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
     cursor: "pointer",
+
   },
   skillIcon: {
-    fontSize: "2.5rem",
+    
+    fontSize: "5.5rem",
     color: "white",
+    whileHover: { 
+      opacity: 1,
+      scale: 2, 
+      boxShadow: "0px 4px 15px rgba(255, 255, 255, 0.2)" 
+    },
   },
   skillName: {
     marginTop: "10px",

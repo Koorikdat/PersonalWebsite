@@ -9,6 +9,17 @@ const Projects = () => {
   );
 };
 
+const ProjectCard = ({ image, name , description}) => {
+  return (
+    <div style={styles.ProjectCard}>
+       <span style={styles.ProjectName}>{name}</span>
+      <div style={styles.ProjectImage}>{icon}</div>
+      <p> {styles.ProjectDescription} </p>
+     
+    </div>
+  );
+};
+
 const styles = {
   container: {
     width: "100vw",

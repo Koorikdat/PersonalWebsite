@@ -22,7 +22,7 @@ const ProjectCard = ({ image, name , description}) => {
 
 const styles = {
   container: {
-    width: "100vw",
+    width: "110vw",
     height: "100vh", 
     display: "flex",
     flexDirection: "column",

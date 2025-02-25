@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ThreeScene from "./Model"; // Import 3D model component
+import Maisam_Resume from '../assets/Maisam_Resume.pdf'
 
 const Navbar = () => {
   const [navItems, setNavItems] = useState([
@@ -29,6 +30,17 @@ const Navbar = () => {
 
       {/* Right Side: Navigation Menu */}
       <div style={styles.navContainer}>
+
+      {/* Button to download resume pdf */}
+      <button class="DownloadButton">
+        <a href = {Maisam_Resume} download='Maisam_Resume'>
+
+          Check out my resume!
+
+        </a>
+      </button>
+
+
         {navItems.map((item, i) => (
           <div
             key={i}
@@ -38,9 +50,22 @@ const Navbar = () => {
             }}
             onClick={() => changeActiveNavItem(i, item.id)}
           >
-            <span style={styles.navItemText}>{item.name}</span>
+            <span style={styles.navItemText}>{item.name}
+
+
+            </span>
+
+
+
+
+
           </div>
-        ))}
+
+         
+        ))
+        
+        }
+
       </div>
     </nav>
   );
@@ -82,6 +107,15 @@ const styles = {
   navItemText: {
     fontSize: "16px",
     transition: "opacity 0.25s",
+  },
+
+  DownloadButton:{
+
+    backgroundcolor: 'white',
+
+
+
+
   },
 };
 

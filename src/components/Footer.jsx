@@ -1,5 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Maisam_Resume from '../assets/Maisam_Resume.pdf'
+
 
 const Footer = () => {
   return (
@@ -14,6 +16,18 @@ const Footer = () => {
         <a href="https://www.linkedin.com/in/maisam-anjum/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin style={styles.icon} />
         </a>
+
+      <button class="DownloadButton">
+        <a href = {Maisam_Resume} download='Maisam_Resume'>
+
+          Check out my resume!
+
+        </a>
+      </button>
+
+
+
+
       </div>
       
       <p style={styles.connect}>Connect with me!</p>

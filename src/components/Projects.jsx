@@ -68,6 +68,7 @@ const styles = {
     textAlign: "center",
     padding: "50px 20px",
     overflow: "hidden",
+
   },
   heading: {
     fontSize: "2.5rem",

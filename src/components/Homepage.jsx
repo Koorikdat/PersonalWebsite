@@ -39,6 +39,7 @@ const styles = {
     position: "relative",
     backgroundColor: "black",
     overflow: "hidden", 
+
   },
   video: { // Not sure why but playing with z-index breaks the video
     position: "absolute",

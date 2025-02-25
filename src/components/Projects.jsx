@@ -1,6 +1,6 @@
 import React from "react";
-import Sorter from "../assets/Sorter.png"; // Import image correctly
-import FadeIn from "./FadeIn"; // Import FadeIn effect
+import Sorter from "../assets/Sorter.png"; 
+import FadeIn from "./FadeIn"; 
 
 const Projects = () => {
   const projects = [
@@ -14,7 +14,7 @@ const Projects = () => {
 
   return (
     <section id="projects" style={styles.container}>
-      <h2 style={styles.heading}>Projects</h2>
+      <h2 style={styles.heading}>Some of my Projects</h2>
       <div style={styles.projectsGrid}>
         {projects.map((project, index) => (
           <FadeIn key={index}> {/* Wrap each card in FadeIn */}
@@ -48,25 +48,26 @@ const styles = {
     alignItems: "center",
     backgroundColor: "#fff",
     textAlign: "center",
-    padding: "40px 20px",
+    padding: "50px 20px",
   },
   heading: {
     fontSize: "2.5rem",
     fontWeight: "bold",
     color: "#222",
-    marginBottom: "40px",
+    marginBottom: "50px",
   },
   projectsGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)", // 🔥 3 columns layout
-    gridTemplateRows: "repeat(2, auto)", // 🔥 2 rows layout
-    gap: "100px",
-    maxWidth: "1000px",
-    
+    gridTemplateColumns: "repeat(3, 1fr)", 
+    gridTemplateRows: "repeat(2, auto)",
+    gap: "40px",
+    maxWidth: "1200px", 
+    justifyContent: "center",
+    alignItems: "center",
   },
   projectCard: {
-    width: "100%",
-    height: "100%",
+    width: "500px", 
+    minHeight: "350px",
     backgroundColor: "#f4f4f4",
     borderRadius: "12px",
     overflow: "hidden",
@@ -74,7 +75,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     padding: "30px",
-    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.15)",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
   },
   projectImage: {
@@ -87,15 +88,15 @@ const styles = {
     textAlign: "center",
   },
   projectTitle: {
-    fontSize: "1.5rem",
+    fontSize: "1.75rem", 
     fontWeight: "bold",
     color: "#222",
     marginBottom: "10px",
   },
   projectDescription: {
-    fontSize: "1rem",
+    fontSize: "1.1rem", 
     color: "#555",
-    maxWidth: "90%",
+    maxWidth: "85%",
   },
 };
 

@@ -17,6 +17,14 @@ const Footer = () => {
           <FaLinkedin style={styles.icon} />
         </a>
 
+     
+
+
+
+
+      </div>
+
+
       <button class="DownloadButton">
         <a href = {Maisam_Resume} download='Maisam_Resume'>
 
@@ -24,14 +32,11 @@ const Footer = () => {
 
         </a>
       </button>
-
-
-
-
-      </div>
       
-      <p style={styles.connect}>Connect with me!</p>
+      
       <p style={styles.copyright}>© 2025 - Maisam Anjum</p>
+
+      
     </footer>
   );
 };

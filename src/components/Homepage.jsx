@@ -19,7 +19,7 @@ const Homepage = () => {
       />
 
       <FadeIn>
-        <div style={styles.overlay}>
+        <div style={styles.overlay} className="crt-effect">
           <h1>Hello, I'm Maisam!</h1>
           <h2>Welcome to My Portfolio!</h2>
           <p>I am a software developer and computer science researcher!</p>
@@ -54,7 +54,10 @@ const styles = {
     backdropFilter: "blur(5px)",
     color: "white",
     textAlign: "center",
-
+    fontFamily: "'VT323', monospace",
+    fontSize: "1.5rem",
+    animation: "crt-glitch 0.2s infinite alternate",
+    textShadow: "1px 1px 0 #ff0000, -1px -1px 0 #00ff00, -1px 1px 0 #0000ff",
   },
 };
 

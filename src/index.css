@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 :root {
-  /* Set a consistent font-family */
+  /* Ensure consistent font-family across all devices */
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -25,11 +25,41 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
-  overflow-x: hidden; /* Prevents horizontal scrolling */
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+  font-family: 'Inter', Arial, Helvetica, sans-serif !important;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* Ensure smooth scrolling for multiple sections */
+section {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* Fix background video positioning */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Ensure text styles are applied consistently */
+h1, h2, h3, p {
+  font-family: 'Inter', Arial, Helvetica, sans-serif !important;
+}
+
+/* Links */
 a {
   font-weight: 500;
   color: #646cff;
@@ -39,11 +69,7 @@ a:hover {
   color: #535bf2;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* Buttons */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -63,29 +89,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Ensuring consistent layout */
-#root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  text-align: center;
-  overflow: hidden; /* Prevents unwanted scrolling */
-}
-
-/* Ensure video backgrounds take up the full screen */
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-}
-
+/* Light Mode Fix */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -97,4 +101,51 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+
+@keyframes crt-glitch {
+  0% { text-shadow: 1px 1px 0 #ff0000, -1px -1px 0 #00ff00, 1px -1px 0 #0000ff; }
+  25% { text-shadow: -1px -1px 0 #ff0000, 1px 1px 0 #00ff00, -1px 1px 0 #0000ff; }
+  50% { text-shadow: 1px -1px 0 #ff0000, -1px 1px 0 #00ff00, -1px -1px 0 #0000ff; }
+  75% { text-shadow: -1px 1px 0 #ff0000, 1px -1px 0 #00ff00, 1px 1px 0 #0000ff; }
+  100% { text-shadow: 1px 1px 0 #ff0000, -1px -2px 0 #00ff00, -1px 1px 0 #0000ff; }
+}
+
+/* Slight screen flicker */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+/* Apply the scanline effect */
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -100vh; }
+}
+
+/* Global CRT effect for the page */
+.crt-effect {
+  animation: flicker 0.2s infinite alternate;
+  position: relative;
+}
+
+.crt-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    rgba(0, 0, 0, 0.2) 0px,
+    rgba(0, 0, 0, 0.2) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  background-size: 100% 4px;
+  opacity: 0.2;
+  pointer-events: none;
+  animation: scanlines 1s linear infinite;
 }

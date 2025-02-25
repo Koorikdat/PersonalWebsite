@@ -25,7 +25,7 @@ git push --force origin main
 
 echo "Dev branch has been successfully copied to Main!"
 
-# deploy
+# deploy the file from main to github pages
 npm run deploy
 
 echo "Deployed from main"

@@ -1,17 +1,24 @@
 import React from "react";
+import ReactPlayer from "react-player";
 import FadeIn from "./FadeIn";
+
 import staticTorontoBanner from "../assets/staticTorontoBanner.mp4";
 
 const Homepage = () => {
   return (
     <section id="home" style={styles.container}>
-      {/* Background Video */}
-      <video autoPlay loop muted playsInline style={styles.video}>
-        <source src={staticTorontoBanner} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <ReactPlayer
+        url={staticTorontoBanner} 
+        playing
+        loop
+        muted
+        width="100%"
+        height="100%"
+        style={styles.video}
+        config={{ file: { attributes: { playsInline: true } } }} 
+      />
 
-      {/* Overlay */}
+      {/* Overlay Content */}
       <FadeIn>
         <div style={styles.overlay}>
           <h1>Welcome to My Portfolio</h1>
@@ -29,29 +36,25 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    position: "relative", 
-    overflow: "hidden", // Prevents scrolling issues
+    position: "relative",
+    overflow: "hidden", 
+    backgroundColor: "black", 
   },
-  video: {
+  video: { // Not sure why but playing with z-index breaks the video
     position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    zIndex: "-1", // Moves it behind other content
+    top: "0",
+    left: "0",
   },
   overlay: {
     width: "30vw",
     height: "20vh",
-    backgroundColor: "rgba(0, 0, 0, 0.5)", 
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
     padding: "20px",
     borderRadius: "10px",
-    backdropFilter: "blur(5px)", 
+    backdropFilter: "blur(5px)",
     color: "white",
     textAlign: "center",
-    zIndex: "2",
+
   },
 };
 

@@ -66,7 +66,7 @@ const styles = {
   },
   projectCard: {
     width: "100%",
-    height: "200%",
+    height: "100%",
     backgroundColor: "#f4f4f4",
     borderRadius: "12px",
     overflow: "hidden",

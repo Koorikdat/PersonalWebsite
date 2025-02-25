@@ -27,7 +27,8 @@ const Projects = () => {
 
   return (
     <section id="projects" style={styles.container}>
-      <h2 style={styles.heading}>Some of my Projects</h2>
+      <h1 style={styles.heading}>Here are some of the Projects I have done!</h1>
+      <h1 style={styles.heading2}>Scroll Through and Have a Look!</h1>
       
       {/* Horizontal Scrolling Carousel */}
       <div style={styles.carouselContainer}>
@@ -73,6 +74,14 @@ const styles = {
     fontWeight: "bold",
     color: "#222",
     marginBottom: "30px",
+  },
+  heading2: {
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+    color: "#222",
+    marginBottom: "30px",
+    color: "#535bf2",
+
   },
   carouselContainer: {
     width: "100vw",

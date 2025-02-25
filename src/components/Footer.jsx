@@ -35,6 +35,8 @@ const Footer = () => {
       
       
       <p style={styles.copyright}>© 2025 - Maisam Anjum</p>
+      <p style={styles.copyright}>This Website was made by me in React + Vite!</p>
+
 
       
     </footer>

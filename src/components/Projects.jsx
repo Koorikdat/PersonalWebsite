@@ -2,46 +2,42 @@ import React from "react";
 import Sorter from "../assets/Sorter.png"; 
 import SnowBuddies from "../assets/SnowBuddies.png";
 import RevCurse from "../assets/RevCurse.png";
-
+import GA from "../assets/GA.png";
+import LightGCN from "../assets/LightGCN.png";
 import FadeIn from "./FadeIn"; 
 
-const Projects = () => {
-  const projects = [
+const Projects = () => { 
+  const projects = [ // Add card information here for each project
     { name: "Genetic Algorithm Decryption",
-      description: "Implementation of a GA using k-tournament selection, crossover breeding, mutations ", 
-      image: Sorter },
+      description: "Implementation of a GA using k-tournament selection, crossover breeding, mutations.",
+      image: GA },
 
     { name: "Snowbuddies",
-      description: "Completely designed and deployed an app using Flutter+Firebase to connect people with volunteers",
+      description: "Completely designed and deployed an app using Flutter+Firebase to connect people with volunteers.",
       image: SnowBuddies },
 
     { name: "Reversal Curse Study",
-      description: "Worked under Brock University to study reversal curse: an inability to retain information when framed in reflexive relation",
+      description: "Worked under Brock University to study reversal curse: an inability to retain information when framed in reflexive relation.",
       image: RevCurse },
 
     { name: "CAGCN",
-      description: "Worked under Brock University to research Graph Neural Network Architecture, investigating LightGCN vs CAGCN",
-      image: RevCurse },
-
-    { name: "Volunteering App",
-      description: "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.",
-      image: Sorter },
-
-    { name: "Research Works",
-      description: "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.",
-      image: Sorter },
-
+      description: "Worked under Brock University to research Graph Neural Network Architecture, investigating LightGCN vs CAGCN.",
+      image: LightGCN },
   ];
 
   return (
     <section id="projects" style={styles.container}>
       <h2 style={styles.heading}>Some of my Projects</h2>
-      <div style={styles.projectsGrid}>
-        {projects.map((project, index) => (
-          <FadeIn key={index}> {/* Wrap each card in FadeIn */}
-            <ProjectCard {...project} />
-          </FadeIn>
-        ))}
+      
+      {/* Horizontal Scrolling Carousel */}
+      <div style={styles.carouselContainer}>
+        <div style={styles.carousel}>
+          {projects.map((project, index) => (
+            <FadeIn key={index}> 
+              <ProjectCard {...project} />
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -67,55 +63,67 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#fff", 
     textAlign: "center",
     padding: "50px 20px",
+    overflow: "hidden",
   },
   heading: {
     fontSize: "2.5rem",
     fontWeight: "bold",
     color: "#222",
-    marginBottom: "50px",
+    marginBottom: "30px",
   },
-  projectsGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)", 
-    gridTemplateRows: "repeat(2, auto)",
-    gap: "40px",
-    maxWidth: "1200px", 
+  carouselContainer: {
+    width: "100vw",
+    overflowX: "auto",
+    display: "flex",
     justifyContent: "center",
-    alignItems: "center",
+    padding: "20px 50px", 
+  },
+  carousel: {
+    display: "flex",
+    gap: "30px",
+    padding: "20px",
+    width: "max-content", 
+    scrollSnapType: "x mandatory",
+    scrollBehavior: "smooth",
+    scrollbarWidth: "none", 
+    overflowX: "auto", 
   },
   projectCard: {
-    width: "500px", 
-    maxHeight: "500px",
+    flex: "0 0 auto",
+    width: "60vh", 
+    height: "45vh",
     backgroundColor: "#f4f4f4",
     borderRadius: "12px",
     overflow: "hidden",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "30px",
+    padding: "20px",
     boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.15)",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    scrollSnapAlign: "center", 
   },
   projectImage: {
-    width: "100%",
-    height: "20%",
-    borderRadius: "6px",
+    width: "90%",
+    height: "60%",
+    borderRadius: "8px",
+    objectFit: "cover",
   },
   textContainer: {
-    padding: "20px",
+    padding: "15px",
     textAlign: "center",
   },
   projectTitle: {
-    fontSize: "1.75rem", 
+    fontSize: "1.5rem", 
     fontWeight: "bold",
     color: "#222",
     marginBottom: "10px",
   },
   projectDescription: {
-    fontSize: "1.1rem", 
+    fontSize: "1rem", 
     color: "#555",
     maxWidth: "85%",
   },

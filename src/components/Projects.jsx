@@ -1,15 +1,36 @@
 import React from "react";
 import Sorter from "../assets/Sorter.png"; 
+import SnowBuddies from "../assets/SnowBuddies.png";
+import RevCurse from "../assets/RevCurse.png";
+
 import FadeIn from "./FadeIn"; 
 
 const Projects = () => {
   const projects = [
-    { name: "Genetic Algorithm", description: "A newsletter with over 6,000 readers made for software developers to keep up with this rapidly evolving industry.", image: Sorter },
-    { name: "Algorithm Visualizer", description: "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.", image: Sorter },
-    { name: "Personal Website", description: "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.", image: Sorter },
-    { name: "Tiktok Bot", description: "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.", image: Sorter },
-    { name: "Volunteering App", description: "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.", image: Sorter },
-    { name: "Visualizing Algorithms", description: "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.", image: Sorter },
+    { name: "Genetic Algorithm Decryption",
+      description: "Implementation of a GA using k-tournament selection, crossover breeding, mutations ", 
+      image: Sorter },
+
+    { name: "Snowbuddies",
+      description: "Completely designed and deployed an app using Flutter+Firebase to connect people with volunteers",
+      image: SnowBuddies },
+
+    { name: "Reversal Curse Study",
+      description: "Worked under Brock University to study reversal curse: an inability to retain information when framed in reflexive relation",
+      image: RevCurse },
+
+    { name: "CAGCN",
+      description: "Worked under Brock University to research Graph Neural Network Architecture, investigating LightGCN vs CAGCN",
+      image: RevCurse },
+
+    { name: "Volunteering App",
+      description: "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.",
+      image: Sorter },
+
+    { name: "Research Works",
+      description: "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.",
+      image: Sorter },
+
   ];
 
   return (
@@ -67,7 +88,7 @@ const styles = {
   },
   projectCard: {
     width: "500px", 
-    minHeight: "350px",
+    maxHeight: "500px",
     backgroundColor: "#f4f4f4",
     borderRadius: "12px",
     overflow: "hidden",
@@ -80,8 +101,8 @@ const styles = {
   },
   projectImage: {
     width: "100%",
-    height: "auto",
-    borderRadius: "8px",
+    height: "20%",
+    borderRadius: "6px",
   },
   textContainer: {
     padding: "20px",

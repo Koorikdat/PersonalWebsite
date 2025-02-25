@@ -17,7 +17,7 @@ const Footer = () => {
       </div>
       
       <p style={styles.connect}>Connect with me!</p>
-      <p style={styles.copyright}>© 2025 My Portfolio</p>
+      <p style={styles.copyright}>© 2025 - Maisam Anjum</p>
     </footer>
   );
 };

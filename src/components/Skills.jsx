@@ -7,17 +7,8 @@ const Skills = () => {
   return (
     <section id="home" style={styles.container}>
 
-      {/* <FadeIn>
-        <div style={styles.overlay1}>
-          <h1>Skills</h1>
-            <p1> ReactJS </p1>
-            <p1> Python </p1>
-            <p1> SQL </p1>
-            <p1> C# </p1>
-            <p1> C </p1>
-            <p1> NodeJS </p1>
-        </div>
-      </FadeIn> */}
+      <h4> These are some of my skills!</h4>
+
 
 
       <FadeIn>

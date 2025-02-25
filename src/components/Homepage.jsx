@@ -18,10 +18,10 @@ const Homepage = () => {
         config={{ file: { attributes: { playsInline: true } } }} 
       />
 
-      {/* Overlay Content */}
       <FadeIn>
         <div style={styles.overlay}>
-          <h1>Welcome to My Portfolio</h1>
+          <h1>Hello, I'm Maisam!</h1>
+          <h2>Welcome to My Portfolio!</h2>
           <p>I am a software developer and computer science researcher!</p>
         </div>
       </FadeIn>
@@ -37,8 +37,8 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
+    backgroundColor: "black",
     overflow: "hidden", 
-    backgroundColor: "black", 
   },
   video: { // Not sure why but playing with z-index breaks the video
     position: "absolute",

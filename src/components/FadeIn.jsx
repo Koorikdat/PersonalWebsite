@@ -24,7 +24,7 @@ const FadeIn = ({ children }) => {
       ref={ref}
       animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -1 }}
       initial={{ opacity: 1, x: 20 }}
-      transition={{ duration: .5, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       whileHover={{ 
         opacity: 1,
         scale: 1.05, 

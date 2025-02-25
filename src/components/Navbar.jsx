@@ -52,7 +52,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    width: "100%",
+    width: "100vw",
     height: "10%",
     position: "fixed",
     top: "0",
@@ -68,7 +68,7 @@ const styles = {
   },
   navContainer: {
     display: "flex",
-    gap: "20px",
+    // gap: "20px",
   },
   navItem: {
     color: "#bbb",

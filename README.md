@@ -1,8 +1,9 @@
-# React + Vite
+https://koorikdat.github.io/PersonalWebsite 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal website made using React + Vite deployed on github pages, this is an ongoing project!
 
-Currently, two official plugins are available:
+some of the features are:
+- 3D model that uses functions for display, rotating on scroll, and reacting on click
+- Custom component sections with features such as video playback, images, links, and more!
+- Many hidden easter eggs :)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

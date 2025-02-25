@@ -55,7 +55,7 @@ const styles = {
     color: "white",
     textAlign: "center",
     fontFamily: "'VT323', monospace",
-    fontSize: "1.5rem",
+    fontSize: "1.1rem",
     animation: "crt-glitch 0.2s infinite alternate",
     textShadow: "1px 1px 0 #ff0000, -1px -1px 0 #00ff00, -1px 1px 0 #0000ff",
   },

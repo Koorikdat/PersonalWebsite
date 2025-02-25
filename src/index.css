@@ -105,11 +105,11 @@ button:focus-visible {
 
 
 @keyframes crt-glitch {
-  0% { text-shadow: 1px 1px 0 #ff0000, -1px -1px 0 #00ff00, 1px -1px 0 #0000ff; }
-  25% { text-shadow: -1px -1px 0 #ff0000, 1px 1px 0 #00ff00, -1px 1px 0 #0000ff; }
-  50% { text-shadow: 1px -1px 0 #ff0000, -1px 1px 0 #00ff00, -1px -1px 0 #0000ff; }
-  75% { text-shadow: -1px 1px 0 #ff0000, 1px -1px 0 #00ff00, 1px 1px 0 #0000ff; }
-  100% { text-shadow: 1px 1px 0 #ff0000, -1px -2px 0 #00ff00, -1px 1px 0 #0000ff; }
+  0% { text-shadow: .5px .5px 0 #ff0000, -.5px -.5px 0 #00ff00, .5px -.5px 0 #0000ff; }
+  25% { text-shadow: -.5px -.5px 0 #ff0000, .5px .5px 0 #00ff00, -.5px .5px 0 #0000ff; }
+  50% { text-shadow: .5px -.5px 0 #ff0000, -.5px .5px 0 #00ff00, -.5px -.5px 0 #0000ff; }
+  75% { text-shadow: -.5px .5px 0 #ff0000, .5px -.5px 0 #00ff00, .5px .5px 0 #0000ff; }
+  100% { text-shadow: .5px .5px 0 #ff0000, -.5px -.5px 0 #00ff00, -.5px .5px 0 #0000ff; }
 }
 
 /* Slight screen flicker */

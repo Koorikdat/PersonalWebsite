@@ -4,7 +4,11 @@ import SnowBuddies from "../assets/SnowBuddies.png";
 import RevCurse from "../assets/RevCurse.png";
 import GA from "../assets/GA.png";
 import LightGCN from "../assets/LightGCN.png";
+import Platformer from "../assets/Platformer.png";
+import Robowars from "../assets/RoboWars.png"; 
+
 import FadeIn from "./FadeIn"; 
+
 
 const Projects = () => { 
   const projects = [ // Add card information here for each project
@@ -12,17 +16,28 @@ const Projects = () => {
       description: "Implementation of a GA using k-tournament selection, crossover breeding, mutations.",
       image: GA },
 
+    { name: "CAGCN",
+      description: "Ran a study under Brock University Professor Renata to research Graph Neural Network Architecture, investigating LightGCN vs CAGCN. The goal is to determine areas where a lightweight model may be more effective than more bloated models in the area of Recommender Systems",
+      image: LightGCN },
+
     { name: "Snowbuddies",
-      description: "Completely designed and deployed an app using Flutter+Firebase to connect people with volunteers.",
+      description: "Completely designed and deployed an app using Flutter+Firebase to connect people with volunteers. The app allowed users to connect with volunteers using a map interface similar to Uber, users can schedule and manage requests from volunteers",
       image: SnowBuddies },
 
     { name: "Reversal Curse Study",
-      description: "Worked under Brock University to study reversal curse: an inability to retain information when framed in reflexive relation.",
+      description: "Ran a study under Brock University Professor Renata to study reversal curse: an inability to retain information when framed in reflexive relation. Results confirmed the phenomenon through testing LLama, OpenAI and other GPT models",
       image: RevCurse },
 
-    { name: "CAGCN",
-      description: "Worked under Brock University to research Graph Neural Network Architecture, investigating LightGCN vs CAGCN.",
-      image: LightGCN },
+
+
+    { name: "Unity Platformer",
+        description: "Created a 3D singleplayer platformer game, map is procedurally generated, C# scripts for enemy AI, and environmental interaction. Included custom made 3D and Audio assets",
+        image: Platformer },
+
+
+    { name: "RoboWars",
+        description: " Multiplayer game with networking in NIO + Java.net, integrated GUI, Multi-thread operation, custom audio interface, active rendering animation, design patterns.",
+        image: Robowars },
   ];
 
   return (

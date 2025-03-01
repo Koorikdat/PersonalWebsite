@@ -1,6 +1,8 @@
 import React from "react";
 import ReactPlayer from "react-player";
 import FadeIn from "./FadeIn";
+import TextRotation from "./TextRotation";
+
 
 import staticTorontoBanner from "../assets/staticTorontoBanner.mp4";
 
@@ -22,7 +24,8 @@ const Homepage = () => {
         <div style={styles.overlay} className="crt-effect">
           <h1>Hello, I'm Maisam!</h1>
           <h2>Welcome to My Portfolio!</h2>
-          <p>I am a software developer and computer science researcher!</p>
+          <p>I am a <TextRotation/></p> 
+          
         </div>
       </FadeIn>
     </section>

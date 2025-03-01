@@ -12,9 +12,7 @@ import FadeIn from "./FadeIn";
 
 const Projects = () => { 
   const projects = [ // Add card information here for each project
-    { name: "Genetic Algorithm Decryption",
-      description: "Implementation of a GA using k-tournament selection, crossover breeding, mutations.",
-      image: GA },
+
 
     { name: "CAGCN",
       description: "Ran a study under Brock University Professor Renata to research Graph Neural Network Architecture, investigating LightGCN vs CAGCN. The goal is to determine areas where a lightweight model may be more effective than more bloated models in the area of Recommender Systems",
@@ -31,13 +29,17 @@ const Projects = () => {
 
 
     { name: "Unity Platformer",
-        description: "Created a 3D singleplayer platformer game, map is procedurally generated, C# scripts for enemy AI, and environmental interaction. Included custom made 3D and Audio assets",
+        description: "Created a 3D singleplayer turn-based platformer game, map is procedurally generated, C# scripts for enemy AI, and environmental interaction. Included custom made 3D and Audio assets",
         image: Platformer },
 
 
     { name: "RoboWars",
         description: " Multiplayer game with networking in NIO + Java.net, integrated GUI, Multi-thread operation, custom audio interface, active rendering animation, design patterns.",
         image: Robowars },
+
+    { name: "Genetic Algorithm Decryption",
+        description: "Implementation of a GA using k-tournament selection, crossover breeding, mutations, inheritance, reproduction. Produced and utilized a selection algorithm based on character-frequency",
+        image: GA },
   ];
 
   return (

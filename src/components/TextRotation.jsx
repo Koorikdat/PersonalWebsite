@@ -9,7 +9,10 @@ class Example extends Component {
         texts={["Software Developer!", "Computer Scientist!", "Machine Learning Researcher"]}
         animation="slide"
         direction="vertical"
-        colors={['red', 'blue']}
+        duration={5}
+        colors={[ 'white']}
+        fontSize= {"90px"}
+
 
       />
     );

@@ -12,12 +12,9 @@ const App = () => {
   return (
     <div style={{ width: "100vw", minHeight: "100vh", backgroundColor: "#121212" }}>
       <Navbar />
-      <TextRotation/>
       <Homepage />
       <Skills />
-      <TextRotation/>
       <Projects />
-      <TextRotation/>
       <Footer />
       
     </div>

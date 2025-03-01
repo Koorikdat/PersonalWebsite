@@ -24,7 +24,7 @@ const Homepage = () => {
         <div style={styles.overlay} className="crt-effect">
           <h1>Hello, I'm Maisam!</h1>
           <h2>Welcome to My Portfolio!</h2>
-          <p>I am a <TextRotation/></p> 
+          <h5>I am a <TextRotation/> </h5> 
           
         </div>
       </FadeIn>

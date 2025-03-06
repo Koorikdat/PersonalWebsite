@@ -11,9 +11,9 @@ const modelPaths = [
 
 const modelScales = [0.35, 2.7, .04, 4]; 
 const modelPositions = [
-  [-1, 0, 1],    
+  [.07, 0, 1],    
   [0, -1, 1], 
-  [-1, -1, 1],
+  [0, -1, 1],
   [0, -.75, 1],  
 ];
 

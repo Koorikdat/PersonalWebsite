@@ -1,20 +1,23 @@
-import React, { useState } from "react";
-import ThreeScene from "./Model"; // Import 3D model component
-import Maisam_Resume from '../assets/Maisam_Resume.pdf'
+import React, { useState, useEffect } from "react";
+import ThreeScene from "./Model"; // 3D Model component
+import Maisam_Resume from "../assets/Maisam_Resume.pdf"; // PDF file
+import ResumePreview from "../assets/Maisam_Resume.png"; // Resume preview image
+import { IoClose, IoDownload } from "react-icons/io5"; // Minimalist icons
 
 const Navbar = () => {
-  const [navItems, setNavItems] = useState([
-    { name: "Home", id: "home", active: true },
-    { name: "Skills", id: "skills", active: false },
-    { name: "Projects", id: "projects", active: false },
-    // { name: "Contact", id: "contact", active: false },
-  ]);
+  const [showResume, setShowResume] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [scrollY, setScrollY] = useState(0);
 
-  const changeActiveNavItem = (index, sectionId) => {
-    setNavItems((prevItems) =>
-      prevItems.map((item, i) => ({ ...item, active: i === index }))
-    );
+  // Track user scroll position for overlay placement
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
+  // Function to scroll to a section smoothly
+  const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -22,100 +25,202 @@ const Navbar = () => {
   };
 
   return (
-    <nav style={styles.navbar}>
-      {/* Left Side: 3D Model */}
-      <div style={styles.modelContainer}>
-        <ThreeScene />
-      </div>
+    <>
+      {/* NAVBAR - Floating, Centered, 3D Model with Backing Circle */}
+      <nav style={styles.navbar}>
+        {/* Left Side: Navigation Items in a Row */}
+        <div style={styles.leftContainer}>
+          {["Home","Skills", "Projects"].map((item, index) => (
+            <div
+              key={index}
+              style={{
+                ...styles.navItem,
+                transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
+              }}
+              onClick={() => scrollToSection(item.toLowerCase())} // Scrolls to section with matching ID
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
 
-      {/* Right Side: Navigation Menu */}
-      <div style={styles.navContainer}>
-
-      {/* Button to download resume pdf */}
-      <button class="DownloadButton">
-        <a href = {Maisam_Resume} download='Maisam_Resume'>
-
-          Check out my resume!
-
-        </a>
-      </button>
-
-
-        {navItems.map((item, i) => (
-          <div
-            key={i}
-            style={{
-              ...styles.navItem,
-              ...(item.active ? styles.navItemActive : {}),
-            }}
-            onClick={() => changeActiveNavItem(i, item.id)}
-          >
-            <span style={styles.navItemText}>{item.name}
-
-
-            </span>
-
-
-
-
-
+        {/* Centered 3D Model with Backing Circle */}
+        <div style={styles.modelWrapper}>
+          <div style={styles.modelContainer}>
+            <ThreeScene />
           </div>
+        </div>
 
-         
-        ))
-        
-        }
+        {/* Right Side: Resume Button */}
+        <div style={styles.rightContainer}>
+          <button
+            onClick={() => setShowResume(true)}
+            style={styles.resumeButton}
+          >
+            Check Out My Resume
+          </button>
+        </div>
+      </nav>
 
-      </div>
-    </nav>
+      {/* RESUME OVERLAY - Slides in & Fades in (UNCHANGED) */}
+      {showResume && (
+        <div
+          style={{
+            ...styles.resumeOverlay,
+            transform: showResume ? "translateX(0)" : "translateX(-100%)",
+            top: scrollY, // Keeps overlay at current scroll position
+          }}
+        >
+          <div style={styles.resumeContent}>
+            {/* Buttons (Top-Left) */}
+            <div style={styles.buttonContainer}>
+              <button onClick={() => setShowResume(false)} style={styles.iconButton}>
+                <IoClose size={28} />
+              </button>
+              <a href={Maisam_Resume} download="Maisam_Resume.pdf" style={styles.iconButton}>
+                <IoDownload size={28} />
+              </a>
+            </div>
+
+            {/* Resume Image (Smaller and Fits 85% of the Container) */}
+            <div
+              style={{
+                ...styles.resumeContainerLeft,
+                opacity: showResume ? "1" : "0",
+                transition: "opacity 0.2s ease-in-out",
+              }}
+            >
+              <img src={ResumePreview} alt="Resume Preview" style={styles.resumeImage} />
+            </div>
+
+            {/* Description on Right */}
+            <div style={styles.resumeText}>
+              <h2>Maisam Anjum – Resume</h2>
+              <p>
+                This resume highlights my **expertise in software development, AI, and machine learning**.
+                It showcases my **work experience at RBC, Brock University, and my contributions as a research assistant**.
+              </p>
+              <p>
+                If you're interested in my **skills, projects, and qualifications**, feel free to **download my resume** 
+                using the button above!
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
 const styles = {
   navbar: {
-    background: "#432245",
+    position: "fixed",
+    top: "8%", // Floating in the center, 8% from the top
+    left: "50%",
+    transform: "translateX(-50%)",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    width: "100vw",
-    height: "10%",
-    position: "fixed",
-    top: "0",
-    left: "0",
-    zIndex: "1000",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+    width: "60vw",
+    maxWidth: "800px",
+    height: "80px",
+    background: "rgba(67, 34, 69, 0.95)",
+    backdropFilter: "blur(10px)",
+    borderRadius: "50px",
+    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.3)",
+    zIndex: 3000, // Ensures it's always visible
+    padding: "0 30px",
   },
-  modelContainer: {
-    width: "200px",
-    height: "70px",
+  leftContainer: {
+    display: "flex",
+    gap: "30px", // Proper spacing between elements
+    flex: "1",
+    justifyContent: "flex-end",
+    paddingRight: "50px",
+  },
+  modelWrapper: {
+    width: "130px",
+    height: "130px",
+    borderRadius: "50%",
+    background: "rgba(67, 34, 69, 1)",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
   },
-  navContainer: {
+  rightContainer: {
+    flex: "1",
     display: "flex",
-    // gap: "20px",
+    justifyContent: "flex-start",
+    paddingLeft: "50px",
+  },
+  resumeButton: {
+    backgroundColor: "#fff",
+    color: "#432245",
+    padding: "12px 20px",
+    borderRadius: "25px",
+    fontSize: "18px",
+    fontWeight: "bold",
+    textDecoration: "none",
+    cursor: "pointer",
+    transition: "transform 0.2s ease, background 0.3s ease",
+    border: "none",
+    outline: "none",
+    boxShadow: "0px 4px 10px rgba(255, 255, 255, 0.2)",
   },
   navItem: {
-    color: "#bbb",
-    padding: "10px 15px",
+    color: "white",
+    fontSize: "18px",
+    fontWeight: "bold",
     cursor: "pointer",
-    transition: "color 0.3s",
+    transition: "transform 0.3s ease-in-out",
   },
-  navItemActive: {
-    color: "#fff",
+  resumeOverlay: {
+    position: "absolute", // Ensures it appears over current scroll position
+    left: "0",
+    width: "80vw",
+    height: "100vh",
+    background: "rgba(0, 0, 0, 0.85)",
+    backdropFilter: "blur(10px)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 4000, // Ensures it's on top
   },
-  navItemText: {
-    fontSize: "16px",
-    transition: "opacity 0.25s",
+  buttonContainer: {
+    position: "absolute",
+    top: "9%",
+    left: "5%",
+    display: "flex",
+    gap: "25px",
   },
-
-  DownloadButton:{
-
-    backgroundcolor: 'white',
-
-
-
-
+  iconButton: {
+    background: "#6A0DAD",
+    color: "white",
+    border: "none",
+    borderRadius: "50%",
+    padding: "15px",
+    cursor: "pointer",
+    transition: "all 0.3s ease-in-out",
+  },
+  resumeContainerLeft: {
+    flex: "1.2",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  resumeImage: {
+    width: "auto", // Ensures the width adjusts proportionally
+    height: "85%", // Fits 85% of its container
+    borderRadius: "10px",
+    maxHeight: "85vh", // Prevents overflow on smaller screens
+  },
+  resumeText: {
+    flex: "1",
+    color: "white",
+    paddingLeft: "40px",
   },
 };
 

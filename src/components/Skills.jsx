@@ -85,7 +85,7 @@ const Skills = ({ color = "none" }) => {
 const styles = {
   container: {
     width: "100vw",
-    height: "65vh",
+    height: "55vh",
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
@@ -116,7 +116,7 @@ const styles = {
     zIndex: "2",
   },
   overlay: {
-    width: "65vw",
+    width: "100%",
     height: "50vh",
     backgroundColor: "rgba(106, 62, 130, 0.7)", 
     backdropFilter: "blur(8px)",

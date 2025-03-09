@@ -15,37 +15,37 @@ const projects = [
     name: "CAGCN",
     description: "Ran a study under Brock University Professor Renata to research Graph Neural Network Architecture, investigating LightGCN vs CAGCN.",
     image: LightGCN,
-    repo: "https://github.com/yourusername/CAGCN"
+    repo: "https://github.com/Koorikdat/FairGNN"
   },
   {
     name: "Snowbuddies",
     description: "Completely designed and deployed an app using Flutter+Firebase to connect people with volunteers.",
     image: SnowBuddies,
-    repo: "https://github.com/yourusername/Snowbuddies"
+    repo: "https://github.com/Koorikdat/VolunteeringApp"
   },
   {
     name: "Reversal Curse Study",
     description: "Ran a study under Brock University Professor Renata to study reversal curse: an inability to retain information when framed in reflexive relation.",
     image: RevCurse,
-    repo: "https://github.com/yourusername/RevCurseStudy"
+    repo: "https://github.com/Koorikdat/reversal_curse"
   },
   {
     name: "Unity Platformer",
     description: "Created a 3D singleplayer turn-based platformer game with procedural map generation.",
     image: Platformer,
-    repo: "https://github.com/yourusername/UnityPlatformer"
+    repo: "https://github.com/Koorikdat/Brock-CS-Coursework/tree/main/COSC3P91%20-%20OOPs/Assignment4"
   },
   {
     name: "RoboWars",
     description: "Multiplayer game with networking in NIO + Java.net, integrated GUI, multi-thread operation, custom audio interface.",
     image: Robowars,
-    repo: "https://github.com/yourusername/RoboWars"
+    repo: "https://github.com/Koorikdat/RoboWars"
   },
   {
     name: "Genetic Algorithm Decryption",
     description: "Implementation of a GA using k-tournament selection, crossover breeding, mutations, inheritance, reproduction.",
     image: GA,
-    repo: "https://github.com/yourusername/GA-Decryption"
+    repo: "https://github.com/Koorikdat/Genetic-Algorithm-Decryption"
   },
 ];
 
@@ -128,8 +128,8 @@ const styles = {
   },
   projectCard: {
     flex: "0 0 auto",
-    width: "30vw",
-    height: "30vh",
+    width: "55vw",
+    height: "55vh",
     backgroundColor: "#f4f4f4",
     borderRadius: "12px",
     overflow: "hidden",

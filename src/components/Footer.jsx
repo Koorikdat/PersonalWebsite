@@ -28,7 +28,7 @@ const Footer = () => {
       <button class="DownloadButton">
         <a href = {Maisam_Resume} download='Maisam_Resume'>
 
-          Check out my resume!
+          Download my resume!
 
         </a>
       </button>

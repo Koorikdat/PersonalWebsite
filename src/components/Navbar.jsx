@@ -215,7 +215,7 @@ const styles = {
   },
   resumeImage: {
     width: "auto", // Ensures the width adjusts proportionally
-    height: "85%", // Fits 85% of its container
+    height: "86%", // Fits 85% of its container
     borderRadius: "10px",
     maxHeight: "85vh", // Prevents overflow on smaller screens
   },

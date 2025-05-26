@@ -99,13 +99,7 @@ const Navbar = () => {
             <div style={styles.resumeText}>
               <h2>Maisam Anjum – Resume</h2>
               <p>
-              Hey, I’m Maisam Anjum! I’m a developer and AI researcher with a passion for building cool tech and solving complex problems.
-              I’ve worked in software development, data engineering, and machine learning research, tackling projects that range from financial
-              data pipelines to AI-driven business applications. At RBC, I developed automated systems to streamline risk management processes, 
-              leveraging machine learning and data visualization to enhance decision-making. At Loblaws, I worked on optimizing data infrastructure, 
-              automating workflows, and improving analytics for large-scale business operations. As a research assistant, I’ve explored LLMs, fairness in AI, 
-              and graph neural networks for recommender systems. I love working with Python, Django, React, AWS, and SQL, and I’m always looking for 
-              exciting projects to collaborate on. If it involves AI, software engineering, or anything innovative,
+              Hey, I’m Maisam Anjum! I’m a software developer and AI researcher with a passion for building cool tech and solving complex problems!
               </p>
 
             </div>
